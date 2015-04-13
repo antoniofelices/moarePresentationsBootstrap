@@ -1,0 +1,47 @@
+{
+  "name": "moare-presentations",
+  "version": "0.0.1",
+  "private": "true",
+  "ignore": [
+    "**/*.txt",
+    "codekit-config.json"
+  ],
+  "dependencies": {
+    "jquery": "latest",
+    "modernizr": "latest",
+    "gsap": "latest",
+    "ScrollMagic": "latest",
+    "requirejs": "latest",
+    "bootstrap-sass": "latest"
+  },
+  "exportsOverride": {
+    "jquery": {
+      "lib": "dist/jquery.js"
+    },
+    "jquery-placeholder": {
+      "lib": "jquery.placeholder.js"
+    },
+    "jquery.cookie": {
+      "lib": "jquery.cookie.js"
+    },
+    "fastclick": {
+      "lib": "lib/fastclick.js"
+    },
+    "modernizr": {
+      "lib": "modernizr.js"
+    },
+    "bootstrap-sass": {
+      "lib": "assets/javascripts",
+      "../scss": "assets/stylesheets"
+    },
+    "gsap": {
+      "lib": "src/uncompressed"
+    },
+    "ScrollMagic": {
+      "lib": "scrollmagic/uncompressed"
+    },
+    "requirejs": {
+      "lib": "require.js"
+    }
+  }
+}
