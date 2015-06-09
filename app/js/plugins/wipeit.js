@@ -1,4 +1,4 @@
-define(['TweenMax','ScrollMagic', 'ScrollMagicjquery','ScrollMagicAnimation','ScrollMagicDebug'], function(TweenMax, ScrollMagic) {
+define(['jquery','TimelineMax','TweenMax','ScrollMagic','ScrollMagicAnimation','ScrollMagicDebug'], function($,TimelineMax,TweenMax,ScrollMagic) {
    
    function efectWipeit(){
 

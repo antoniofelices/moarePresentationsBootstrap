@@ -32,7 +32,8 @@
     },
     "bootstrap-sass": {
       "lib": "assets/javascripts",
-      "../scss": "assets/stylesheets"
+      "../scss": "assets/stylesheets",
+      "../fonts": "assets/fonts/bootstrap"
     },
     "gsap": {
       "lib": "src/uncompressed"
@@ -41,7 +42,7 @@
       "lib": "scrollmagic/uncompressed"
     },
     "requirejs": {
-      "lib": "require.js"
+      "lib": "require.js",
     }
   }
 }

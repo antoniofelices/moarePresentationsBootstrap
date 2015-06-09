@@ -29,6 +29,7 @@ module.exports = function(grunt) {
         options: {
           httpPath: '/',
           cssDir: 'app/stylesheets',
+          sourcemap: true,
           sassDir: 'app/scss',
           imagesDir: 'app/images',
           javascriptsDir: 'app/js',
@@ -42,16 +43,25 @@ module.exports = function(grunt) {
           httpPath: '/',
           sassDir:'app/scss',
           specify: 'app/scss/main.scss',
-          cssDir:'dist/assets/css',
+          cssDir:'dist/assets/stylesheets',
+          sourcemap: true,
           outputStyle: 'compressed',
           environment: 'production'
         }
       }
     },
 
-    //Require
-
     //Uglify
+    uglify: {
+      options: {
+        preserveComments: false,
+      },
+      all: {
+        files: {
+          'dist/assets/js/require.min.js': ['app/js/lib/requirejs/require.js']
+        }
+      }
+    },
 
     //Watch
     watch: {
@@ -59,8 +69,21 @@ module.exports = function(grunt) {
         files: ['app/scss/*.scss','app/scss/plugins/*.scss'],
         tasks: ['compass:dev']
       }
-    }
+    },
 
+    // require
+    requirejs: {
+      compile: {
+        options: {
+          mainConfigFile : "app/js/main.js",
+          baseUrl : "app/js",
+          name: "main",
+          out: "dist/assets/js/main.min.js",
+          removeCombined: true,
+          findNestedDependencies: true
+        }
+      }
+    }
 
   });
 
@@ -68,10 +91,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-bower-task');
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  //grunt.loadNpmTasks('grunt-contrib-requirejs');
-  //grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-requirejs');
 
   // Register tasks
   grunt.registerTask('default', ['compass:dev','watch']);
-  grunt.registerTask('prod', ['compass']);
+  grunt.registerTask('prod', ['compass:prod','uglify','requirejs']);
 };
