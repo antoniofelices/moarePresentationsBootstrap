@@ -21,11 +21,11 @@ require.config({
         ScrollMagicAnimation: 'lib/ScrollMagic/plugins/animation.gsap',
         ScrollMagicDebug: 'lib/ScrollMagic/plugins/debug.addIndicators',
         
-        /* Custom, activar el que voy a usar*/
-        // wipeit: 'plugins/wipeit',
-        // slowlink: 'plugins/slowlink',
-        // slowshow: 'plugins/slowshow',
-        // slowstepbystep: 'plugins/slowstepbystep'
+        /* Custom, activar el que voy a usar. Tiene que ir en concordancia con las llamadas require de abajo */
+        //wipeit: 'plugins/wipeit',
+        //slowlink: 'plugins/slowlink',
+        //slowshow: 'plugins/slowshow',
+        //slowstepbystep: 'plugins/slowstepbystep'
     },
     shim: {
         'bootstrap': {
@@ -43,20 +43,28 @@ require.config({
     }
 });
 
-/* Custom, activar el que voy a usar 
+/* Custom, activar el que voy a usar. Se pueden juntar 
 // Bootstrap
 require(['jquery', 'bootstrap'], function($, bootstrap) {
 });
 
-// Bootstrap, Wipeit Efect, require GSAP, ScrollMagic and wipeit file
-require(['jquery','bootstrap','TweenLite','TimelineMax','TweenMax','ScrollMagic','wipeit'], function($,bootstrap,TweenLite,TimelineMax,TweenMax,ScrollMagic,wipeit){
-    wipeit.efectWipeit();
+// Bootstrap y Slow link efect
+require(['jquery', 'bootstrap', 'slowlink'], function($, bootstrap, slowlink) {
+    slowlink.efectSlowLink();
 });
 
-// Bootstrap, slowlink
-require(['jquery','bootstrap','TweenLite','TimelineMax','TweenMax','ScrollMagic', 'slowlink', 'slowshow', 'slowstepbystep'], function($,bootstrap,TweenLite,TimelineMax,TweenMax,ScrollMagic,slowlink,slowshow,slowstepbystep) {
-    slowlink.efectSlowLink();
+// Bootstrap y Slow show efect
+require(['jquery', 'bootstrap', 'TweenLite', 'TimelineMax', 'TweenMax', 'ScrollMagic', 'slowshow'], function($, bootstrap, TweenLite,TimelineMax, TweenMax, ScrollMagic, slowshow) {
     slowshow.efectSlowShow();
+});
+
+// Bootstrap y Show step by step efect
+require(['jquery', 'bootstrap', 'TweenLite', 'TimelineMax', 'TweenMax', 'ScrollMagic', 'slowstepbystep'], function($, bootstrap, TweenLite,TimelineMax, TweenMax, ScrollMagic, slowstepbystep) {
     slowstepbystep.efectSlowStepByStep();
+});
+
+// Bootstrap, Wipeit Efect, require GSAP, ScrollMagic and wipeit file
+require(['jquery','bootstrap','TweenLite','TimelineMax','TweenMax','ScrollMagic','wipeit'], function($, bootstrap, TweenLite, TimelineMax, TweenMax,ScrollMagic, wipeit){
+    wipeit.efectWipeit();
 });
 */

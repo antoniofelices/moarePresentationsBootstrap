@@ -50,9 +50,9 @@
 @import "bootstrap-sass/bootstrap/utilities";
 @import "bootstrap-sass/bootstrap/responsive-utilities";
 
-// If I have to use Foundation alone, without efects
-// @import "plugins/my-styles";
+// If I have to use Bootstrap alone, without efects
+// @import "plugins/basic";
 
-// If I have to use Foundation and other efect, un-comment the scss file at this efect and comment de rest
-@import "plugins/basic";
+// If I have to use Bootstrap and other efect, un-comment the scss file at this efect and comment de rest
+@import "plugins/wipe-it";
 // etc;

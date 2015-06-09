@@ -33,7 +33,7 @@
       "lib": "scrollmagic/uncompressed"
     },
     "requirejs": {
-      "lib": "require.js",
+      "lib": "require.js"
     }
   }
 }
