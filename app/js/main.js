@@ -22,10 +22,10 @@ require.config({
         ScrollMagicDebug: 'lib/ScrollMagic/plugins/debug.addIndicators',
         
         /* Custom, activar el que voy a usar. Tiene que ir en concordancia con las llamadas require de abajo */
-        //wipeit: 'plugins/wipeit',
         //slowlink: 'plugins/slowlink',
         //slowshow: 'plugins/slowshow',
         //slowstepbystep: 'plugins/slowstepbystep'
+        //wipeit: 'plugins/wipeit'
     },
     shim: {
         'bootstrap': {
