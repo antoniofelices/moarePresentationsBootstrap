@@ -1,7 +1,7 @@
 # Read about how to use .gitignore: https://help.github.com/articles/ignoring-files
 
 # No cargar cache de .sass y bower_components 
-# Trabaja con foundation
+# Trabaja con bootstrap
 # gemfile creará estas carpetas
 
 .sass-cache/*

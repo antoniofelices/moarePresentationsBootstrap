@@ -1,6 +1,6 @@
 {
-  "name": "moare-presentations",
-  "version": "0.0.1",
+  "name": "moare-presentations-bootstrap",
+  "version": "0.1",
   "private": "true",
   "ignore": [
     "**/*.txt",
@@ -15,20 +15,11 @@
     "bootstrap-sass": "latest"
   },
   "exportsOverride": {
-    "jquery": {
-      "lib": "dist/jquery.js"
-    },
-    "jquery-placeholder": {
-      "lib": "jquery.placeholder.js"
-    },
-    "jquery.cookie": {
-      "lib": "jquery.cookie.js"
-    },
-    "fastclick": {
-      "lib": "lib/fastclick.js"
-    },
     "modernizr": {
       "lib": "modernizr.js"
+    },
+    "jquery": {
+      "lib": "dist/jquery.js"
     },
     "bootstrap-sass": {
       "lib": "assets/javascripts",

@@ -1,7 +1,7 @@
 {
-  "name": "moarePresentations",
-  "description": "presentation moare",
-  "version": "0.2.0",
+  "name": "moarePresentationsBootstrap",
+  "description": "presentation moare Bootstrap",
+  "version": "0.1.0",
   "licenses": [
     {
       "type": "MIT",

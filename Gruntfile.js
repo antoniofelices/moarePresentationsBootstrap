@@ -1,6 +1,6 @@
 /*
  *
- * Gruntfile moare presentations
+ * Gruntfile moare presentations Bootstrap
  *
  */
 

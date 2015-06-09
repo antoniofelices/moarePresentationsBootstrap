@@ -1,4 +1,4 @@
-# Moare Presentations
+# Moare Presentations Bootstrap
 
-Plantillas para presentaciones, basado en H5BP, Bootstrap, SASS, GSAP, ScrollMagic.
+Plantillas para presentaciones, basado en Bootstrap, H5BP, SASS, GSAP, ScrollMagic.
 No hay llamadas a CDNs. 
