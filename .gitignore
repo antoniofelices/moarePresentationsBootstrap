@@ -5,7 +5,6 @@
 # gemfile creará estas carpetas
 
 .sass-cache/*
-app/js/lib/*
 app/scss/bootstrap-sass/*
 dist/assets/*
 node_modules/*

@@ -1,6 +1,6 @@
 {
   "name": "moare-presentations-bootstrap",
-  "version": "0.1",
+  "version": "0.2",
   "private": "true",
   "ignore": [
     "**/*.txt",

@@ -70,6 +70,70 @@ module.exports = function(grunt) {
         tasks: ['compass:dev']
       }
     },
+    
+    //Copy
+    copy: {
+      main: {
+        files: [{
+          expand: true,
+          cwd: 'app/',
+          src: ['*.html'],
+          dest: 'dist/'
+        }]
+      },
+      images: {
+        files: [{
+          expand: true,
+          cwd: 'app/imgs',
+          src: ['*.{png,jpg,svg,gif}'],
+          dest: 'dist/assets/imgs'
+        }]
+      },
+      imagescss: {
+        files: [{
+          expand: true,
+          cwd: 'app/imgs/css',
+          src: ['*.{png,jpg,svg,gif}'],
+          dest: 'dist/assets/imgs/css'
+        }]
+      },
+      fonts:{
+        files: [{
+          expand: true,
+          cwd: 'app/fonts',
+          src: ['**/*.*'],
+          dest: 'dist/assets/fonts'
+        }]
+      },
+    },
+
+    //Replace
+    'string-replace': {
+      inline: {
+        files: [{
+          expand: true,
+          cwd: 'dist/',
+          src: '*.html',
+          dest: 'dist/',
+        }],
+        options: {
+          replacements: [
+            {
+              pattern: '<link rel="stylesheet" href="stylesheets/main.css">',
+              replacement: '<link rel="stylesheet" href="assets/stylesheets/main.css">'
+            },
+            {
+              pattern: '<script data-main="js/main" src="js/lib/requirejs/require.js"></script>',
+              replacement: '<script data-main="assets/js/main.min" src="assets/js/require.min.js"></script>'
+            },
+            {
+              pattern: 'imgs',
+              replacement: 'assets/imgs'
+            }
+          ]
+        }
+      }
+    },
 
     // require
     requirejs: {
@@ -91,10 +155,12 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-bower-task');
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-string-replace');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-requirejs');
 
   // Register tasks
   grunt.registerTask('default', ['compass:dev','watch']);
-  grunt.registerTask('prod', ['compass:prod','uglify','requirejs']);
+  grunt.registerTask('prod', ['compass:prod','copy','string-replace','uglify','requirejs']);
 };
