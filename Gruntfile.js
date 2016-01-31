@@ -15,7 +15,7 @@ module.exports = function(grunt) {
     bower:{
       install: {
         options: {
-          targetDir: 'app/js',
+          targetDir: 'app/assets/js',
           layoud: 'byComponent',
           install: true,
           cleanBowerDir: true
@@ -28,12 +28,12 @@ module.exports = function(grunt) {
       dev: {
         options: {
           httpPath: '/',
-          cssDir: 'app/stylesheets',
+          cssDir: 'app/assets/stylesheets',
           sourcemap: true,
-          sassDir: 'app/scss',
-          imagesDir: 'app/images',
-          javascriptsDir: 'app/js',
-          fontsDir: 'app/fonts',
+          sassDir: 'app/assets/scss',
+          imagesDir: 'app/assets/images',
+          javascriptsDir: 'app/assets/js',
+          fontsDir: 'app/assets/fonts',
           outputStyle: 'expanded',
           environment: 'development'
         }
@@ -41,8 +41,8 @@ module.exports = function(grunt) {
       prod: {
         options: {
           httpPath: '/',
-          sassDir:'app/scss',
-          specify: 'app/scss/main.scss',
+          sassDir:'app/assets/scss',
+          specify: 'app/assets/scss/main.scss',
           cssDir:'dist/assets/stylesheets',
           sourcemap: true,
           outputStyle: 'compressed',
@@ -58,7 +58,7 @@ module.exports = function(grunt) {
       },
       all: {
         files: {
-          'dist/assets/js/require.min.js': ['app/js/lib/requirejs/require.js']
+          'dist/assets/js/require.min.js': ['app/assets/js/lib/requirejs/require.js']
         }
       }
     },
@@ -66,7 +66,7 @@ module.exports = function(grunt) {
     //Watch
     watch: {
       css: {
-        files: ['app/scss/*.scss','app/scss/plugins/*.scss'],
+        files: ['app/assets/scss/*.scss','app/assets/scss/plugins/*.scss'],
         tasks: ['compass:dev']
       }
     },
@@ -84,7 +84,7 @@ module.exports = function(grunt) {
       images: {
         files: [{
           expand: true,
-          cwd: 'app/imgs',
+          cwd: 'app/assets/imgs',
           src: ['*.{png,jpg,svg,gif}'],
           dest: 'dist/assets/imgs'
         }]
@@ -92,7 +92,7 @@ module.exports = function(grunt) {
       imagescss: {
         files: [{
           expand: true,
-          cwd: 'app/imgs/css',
+          cwd: 'app/assets/imgs/css',
           src: ['*.{png,jpg,svg,gif}'],
           dest: 'dist/assets/imgs/css'
         }]
@@ -100,7 +100,7 @@ module.exports = function(grunt) {
       fonts:{
         files: [{
           expand: true,
-          cwd: 'app/fonts',
+          cwd: 'app/assets/fonts',
           src: ['**/*.*'],
           dest: 'dist/assets/fonts'
         }]
@@ -119,16 +119,8 @@ module.exports = function(grunt) {
         options: {
           replacements: [
             {
-              pattern: '<link rel="stylesheet" href="stylesheets/main.css">',
-              replacement: '<link rel="stylesheet" href="assets/stylesheets/main.css">'
-            },
-            {
-              pattern: '<script data-main="js/main" src="js/lib/requirejs/require.js"></script>',
+              pattern: '<script data-main="assets/js/main" src="assets/js/lib/requirejs/require.js"></script>',
               replacement: '<script data-main="assets/js/main.min" src="assets/js/require.min.js"></script>'
-            },
-            {
-              pattern: 'imgs',
-              replacement: 'assets/imgs'
             }
           ]
         }
@@ -139,8 +131,8 @@ module.exports = function(grunt) {
     requirejs: {
       compile: {
         options: {
-          mainConfigFile : "app/js/main.js",
-          baseUrl : "app/js",
+          mainConfigFile : "app/assets/js/main.js",
+          baseUrl : "app/assets/js",
           name: "main",
           out: "dist/assets/js/main.min.js",
           removeCombined: true,
