@@ -1,5 +1,5 @@
 require.config({
-    baseUrl: 'js',
+    baseUrl: 'assets/js',
     paths: {
         /* modernizr */
         modernizr: 'lib/modernizr/modernizr',
