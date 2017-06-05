@@ -1,39 +1,31 @@
 {
   "name": "moare-presentations-bootstrap",
-  "version": "0.2",
+  "version": "0.3",
   "private": "true",
   "ignore": [
     "**/*.txt",
     "codekit-config.json"
   ],
   "dependencies": {
-    "jquery": "latest",
     "modernizr": "latest",
     "gsap": "latest",
     "ScrollMagic": "latest",
-    "requirejs": "latest",
     "bootstrap-sass": "latest"
   },
   "exportsOverride": {
     "modernizr": {
-      "lib": "modernizr.js"
-    },
-    "jquery": {
-      "lib": "dist/jquery.js"
+      "": "modernizr.js"
     },
     "bootstrap-sass": {
-      "lib": "assets/javascripts",
-      "../scss": "assets/stylesheets",
-      "../fonts": "assets/fonts/bootstrap"
+        "": "assets/javascripts",
+        "../../scss/lib": "assets/stylesheets",
+        "../../fonts": "assets/fonts/bootstrap"
     },
     "gsap": {
-      "lib": "src/uncompressed"
+      "": "src/uncompressed"
     },
     "ScrollMagic": {
-      "lib": "scrollmagic/uncompressed"
-    },
-    "requirejs": {
-      "lib": "require.js"
+      "": "scrollmagic/uncompressed"
     }
   }
 }

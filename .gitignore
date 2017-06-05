@@ -1,13 +1,9 @@
-# Read about how to use .gitignore: https://help.github.com/articles/ignoring-files
+# Ignore, sass-cache, scss, node_modules
 
-# No cargar cache de .sass y bower_components 
-# Trabaja con bootstrap
-# gemfile creará estas carpetas
+.sass-cache/
+app/scss/bootstrap-sass/
+dist/assets/
+node_modules/
 
-.sass-cache/*
-app/scss/bootstrap-sass/*
-dist/assets/*
-node_modules/*
-
-# Otros
-*.DS_Store
+# Others
+.DS_Store
